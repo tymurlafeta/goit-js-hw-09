@@ -12,6 +12,7 @@ const refs = {
 };
 
 let userDate = null;
+let timerId = null;
 
 const options = {
   enableTime: true,
@@ -59,7 +60,7 @@ function convertMs(ms) {
   // Remaining minutes
   const minutes = Math.floor(((ms % day) % hour) / minute);
   // Remaining seconds
-  const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+  const seconds = Math.floor((((ms % day) % hour) % minute) / second) % 60;
 
   return { days, hours, minutes, seconds };
 }
