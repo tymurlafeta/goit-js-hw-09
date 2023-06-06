@@ -34,7 +34,7 @@ flatpickr('#datetime-picker', options);
 function onStartBtnClick(e) {
   timerId = setInterval(() => {
     const diff = userDate - Date.now();
-    if (diff < 900) {
+    if (diff < 1000) {
       clearInterval(timerId);
     }
     const date = convertMs(diff);
@@ -68,7 +68,7 @@ function renderTimer({ days, hours, minutes, seconds }) {
   refs.dayElem.textContent = addLeadingZero(days);
   refs.hoursElem.textContent = addLeadingZero(hours);
   refs.minutesElem.textContent = addLeadingZero(minutes);
-  refs.secondsElem.textContent = addLeadingZero(seconds);
+  refs.secondsElem.textContent = addLeadingZero(seconds % 60);
 }
 
 function addLeadingZero(value) {
