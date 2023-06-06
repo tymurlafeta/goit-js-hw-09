@@ -34,7 +34,7 @@ flatpickr('#datetime-picker', options);
 function onStartBtnClick(e) {
   timerId = setInterval(() => {
     const diff = userDate - Date.now();
-    if (diff < 1000) {
+    if (diff < 900) {
       clearInterval(timerId);
     }
     const date = convertMs(diff);
