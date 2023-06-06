@@ -12,16 +12,15 @@ stopBtn.addEventListener("click", stopColorChange);
 
 function startColorChange() {
   startBtn.disabled = true;
-  intervalId = setInterval(changeBodyColor, 1000);
+  timerId = setInterval(changeBodyColor, 1000);
 };
 
 function stopColorChange() {
   startBtn.disabled = false;
-  clearInterval(intervalId);
+  clearInterval(timerId);
 };
 
 function changeBodyColor() {
   const body = document.body;
   body.style.backgroundColor = getRandomHexColor();
 };
-
